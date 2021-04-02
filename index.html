@@ -5,13 +5,19 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Portfolio</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <div class="container">
+      <!-- navbar -->
       <div class="nav-wrapper">
         <div class="left-side">
-          <div class="nav-link-wrapper">
+          <div class="nav-link-wrapper active-nav-link">
             <a href="index.html">Home</a>
           </div>
 
@@ -26,12 +32,76 @@
           </div>
         </div>
       </div>
-      <div class="content-wrapper">
-          <div class="portfolio-items-wrapper"</div>
 
-            <div class="portfolio-items-wrapper"</div>
-                
+      <!-- content -->
+
+      <div class="content-wrapper">
+        <div class="portfolio-items-wrapper">
+          <div class="portfolio-item-wrapper">
+            <div
+              class="portfolio-img-background"
+              style="background-image: url(imagesp/coding.jpeg)"
+            ></div>
+            <div class="img-text-wrapper">
+              <div class="logo-wrapper">
+                <img src="./logos/twitter-logo.png" />
+              </div>
+              <div class="subtitle">I built xx and contributed yy</div>
+            </div>
+          </div>
+          <div class="portfolio-item-wrapper">
+            <div
+              class="portfolio-img-background"
+              style="background-image: url(imagesp/nature1.jpeg)"
+            ></div>
+            <div class="img-text-wrapper">
+              <div class="logo-wrapper">
+                <img src="./logos/earth logo.png" />
+              </div>
+              <div class="subtitle">I built xx and contributed yy</div>
+            </div>
+          </div>
+          <div class="portfolio-item-wrapper">
+            <div
+              class="portfolio-img-background"
+              style="background-image: url(imagesp/nature2.jpeg)"
+            ></div>
+            <div class="img-text-wrapper">
+              <div class="logo-wrapper">
+                <img src="./logos/earth logo.png" />
+              </div>
+              <div class="subtitle">I built xx and contributed yy</div>
+            </div>
+          </div>
+          <div class="portfolio-item-wrapper">
+            <div
+              class="portfolio-img-background"
+              style="background-image: url(imagesp/nature3.jpeg)"
+            ></div>
+            <div class="img-text-wrapper">
+              <div class="logo-wrapper">
+                <img src="./logos/earth logo.png" />
+              </div>
+              <div class="subtitle">I built xx and contributed yy</div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </body>
+  <script>
+    const portfolioItems = document.querySelectorAll(".portfolio-item-wrapper");
+
+    portfolioItems.forEach((portfolioItem) => {
+      portfolioItem.addEventListener("mouseover", () => {
+        console.log(portfolioItem.childNodes[1].classList);
+        portfolioItem.childNodes[1].classList.add("img-darken");
+      });
+
+      portfolioItem.addEventListener("mouseout", () => {
+        console.log(portfolioItem.childNodes[1].classList);
+        portfolioItem.childNodes[1].classList.remove("img-darken");
+      });
+    });
+  </script>
 </html>
